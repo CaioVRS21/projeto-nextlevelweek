@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*GERAL*/
 *{
     margin: 0;
     box-sizing: border-box;
@@ -7,54 +8,143 @@
     font-size: 62.5%;
     --primary-color: hsla(61, 81%, 80%, 0.774);
     --secondary-color: hsl(0, 84%, 62%);
+
+    --nav-height: 7.2rem;
 }
-header{
+.wrapper{
     width: 37.5rem;
-    margin-right: auto;
-    margin-left: auto;
+    margin-inline: auto;
     text-align: center;
-    margin-top: 4.1rem;
+    padding-inline: 2.4rem;
 }
-body{
+/*MENU DE NAVEGAÇÃO*/
+nav{
+    display: flex;
+
+    height: var(--nav-height);
+
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+nav .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.scroll{
+    background-color: var(--secondary-color);
+    width: 100vw;
+}
+.scroll svg path{
+    stroke: yellow;
+}
+/*CABEÇALHO*/
+header{
+    
+    margin-top: calc(var(--nav-height) + 4.1rem);
+}
+#cabecalho::before{
+    content:"";
+    width: 100vw;
+    height: calc(90rem + var(--nav-height));
     background-color: var(--primary-color);
-    font-family: 'DM sans', sans-serif;
-    font-size: 1.6rem;
-    text-align: center;
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
 }
-h1{
+#cabecalho h1{
     font-size: 3.4rem;
     line-height: 130%;
     margin-bottom: 2.4rem;
 }
-h4{
+#cabecalho h4{
     font-size: 1.4rem;
     margin-bottom: 1.6rem;
 }
-p{
+#cabecalho p{
     font-size: 1.8rem;
     margin-bottom: 3.2rem;
+}
+#foto-alunos{
+    display: block;
+    margin-top: 6rem;
+    margin-inline: auto;
+
+    width: 35rem;
 }
 .botao-redondo{
     width:26.3rem;
     height:5.2rem;
     background-color: var(--secondary-color);
+
+
     border: none;
     padding: 2rem;
+
     text-align: center;
     text-decoration: none;
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.6rem;
+
     font-size: 2rem;
     margin: 0.4rem 0.2rem;
+
     border-radius: 4rem;
+
     text-transform: uppercase;
     font-size: 1.4rem;
     font-weight:700;
     color: white;
+
     margin-right: auto;
     margin-left: auto;
     
 }
+/*CORPO DO SITE*/
+body{
+    font-family: 'DM sans', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+}
 
+.container1{
+    width: 32.7rem;
+    height: 47rem;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 1rem;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10rem;
+}
+.numero-caixa{
+    font-size:4.8rem;
+    text-transform: uppercase;
+}
+.texto-caixa{
+    margin-top: 0.4rem;
+}
+#servicos-texto{
+    font-size: 3rem;
+}
