@@ -1,9 +1,24 @@
+window.addEventListener('scroll', onScroll);
 
+onScroll()
 function onScroll() {
+    ShowNavOnScroll();
+    ShowBackToTopButtonOnScroll();
+  }
+
+  function ShowNavOnScroll(){
     if (scrollY > 0) {
-      navigation.classList.add('scroll')
+      navigation.classList.add('scroll');
     } else {
-      navigation.classList.remove('scroll')
+      navigation.classList.remove('scroll');
+    }
+  }
+
+  function ShowBackToTopButtonOnScroll(){
+    if (scrollY > 1100) {
+      BackToTopButton.classList.add('show');
+    } else {
+      BackToTopButton.classList.remove('show');
     }
   }
   
@@ -14,7 +29,7 @@ function onScroll() {
   function closeMenu() {
     document.body.classList.remove('menu-expanded')
   }
-  
+  /*
   ScrollReveal({
     origin: 'top',
     distance: '30px',
@@ -29,4 +44,4 @@ function onScroll() {
     #about, 
     #about header, 
     #about .content`)
-  
+  */
